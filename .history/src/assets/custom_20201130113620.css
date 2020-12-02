@@ -1,0 +1,11 @@
+section.hero-section.set-bg img {
+    margin-bottom: 0;
+}
+
+img {
+    margin-bottom: 0 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}

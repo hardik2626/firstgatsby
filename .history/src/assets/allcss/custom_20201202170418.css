@@ -1,0 +1,24 @@
+section.hero-section.set-bg img {
+    margin-bottom: 0;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+img,
+ul {
+    margin-bottom: 0 !important;
+}
+
+ul {
+    margin-left: 0px !important;
+}
+
+nav.mainmenu.mobile-menu ul li {
+    margin-bottom: 0px;
+}
+
+.ha-text ul {
+    margin-bottom: 27px !important;
+}

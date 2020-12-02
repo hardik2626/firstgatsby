@@ -1,0 +1,12 @@
+section.hero-section.set-bg img {
+    margin-bottom: 0;
+}
+
+img,
+ul {
+    margin-bottom: 0 !important;
+}
+
+nav.mainmenu.mobile-menu ul li {
+    margin-bottom: 0px;
+}

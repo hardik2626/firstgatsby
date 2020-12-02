@@ -1,0 +1,23 @@
+html,
+body {
+    height: 100%;
+    font-family: "Work Sans", sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
+}
+
+section.hero-section.set-bg img {
+    margin-bottom: 0;
+}
+
+img {
+    margin-bottom: 0 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.schedule-table-tab ul.nav-tabs {
+    margin-bottom: 50px !important;
+}

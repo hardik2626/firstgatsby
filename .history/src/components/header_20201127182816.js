@@ -1,0 +1,89 @@
+import { StaticQuery, graphql, Link } from "gatsby"
+import React from "react"
+import '../assets/global.css'
+import Img from "gatsby-image"
+
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        wordpressSiteMetadata {
+          name
+        }
+        wordpressWpApiMenusMenusItems(name: { eq: "MainMenu" }) {
+          items {
+            title
+            object_slug
+          }
+        }
+      }
+    `}
+
+
+    
+    render={data => (
+      /*<header className='header-section' style={{ background: `rebeccapurple`, marginBottom: `1.45rem`, }} >
+        <div style={{ margin: `0 auto`, maxWidth: 960, padding: `1.45rem 1.0875rem`, display: `flex`, justifyContent: `space-between`, alignItems: `center`, }} >
+          <h1 style={{ margin: 0 }}>
+            <Link to="/" style={{ color: `white`, textDecoration: `none`, }} >
+              {data.wordpressSiteMetadata.name}
+            </Link>
+          </h1>
+          <ul style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
+            {data.wordpressWpApiMenusMenusItems.items.map(item => (
+              <li key={item.object_slug} style={{ margin: `0 10px` }}>
+                <Link to={`/${item.object_slug}`} style={{ color: `white`, textDecoration: `none`, fontFamily: `sans-serif`, }} >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>*/
+      
+
+
+      <header className="header-section">
+        <div className="container">
+            <div className="logo">
+              <Link to="/">
+                {data.wordpressSiteMetadata.name}
+                <Img
+  className="headshot"
+  fixed={data.file.childImageSharp.fixed}
+  alt="headshot"
+/>
+              </Link>
+            </div>
+            <div className="nav-menu">
+                <nav className="mainmenu mobile-menu">
+                    <ul>
+                    {data.wordpressWpApiMenusMenusItems.items.map(item => (
+                      <li className='active' key={item.object_slug} style={{ margin: `0 10px` }}>
+                        <Link to={`/${item.object_slug}`}>
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                    </ul>
+                </nav>
+                <a href="#" className="primary-btn top-btn"><i className="fa fa-ticket"></i> Ticket</a>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    )}
+  />
+)
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "static/logo.png" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
+export default Header

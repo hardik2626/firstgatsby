@@ -1,0 +1,8 @@
+section.hero-section.set-bg img {
+    margin-bottom: 0;
+}
+
+img,
+ul {
+    margin-bottom: 0 !important;
+}
